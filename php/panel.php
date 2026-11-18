@@ -25,7 +25,7 @@ $kaynak = kaynak_ozeti();
 <head>
 <meta charset="utf-8">
 <title><?= h(UYGULAMA_ADI) ?> · Ana Sayfa</title>
-<link rel="stylesheet" href="../prototip/assets/stil.css">
+<link rel="stylesheet" href="../prototip/assets/stil.css"><link rel="stylesheet" href="tam-ekran.css">
 </head>
 <body>
 <div class="app">

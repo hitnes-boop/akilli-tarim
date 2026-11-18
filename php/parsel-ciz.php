@@ -12,7 +12,7 @@ const PARSEL_HATALARI = [
     'var'   => 'Bu adda bir parseliniz zaten var.',
 ];
 ?>
-<!doctype html><html lang="tr"><head><meta charset="utf-8"><title>Akıllı Tarım prototip W3</title><link rel="stylesheet" href="../prototip/assets/stil.css">
+<!doctype html><html lang="tr"><head><meta charset="utf-8"><title>Akıllı Tarım prototip W3</title><link rel="stylesheet" href="../prototip/assets/stil.css"><link rel="stylesheet" href="tam-ekran.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css"></head><body class=""><div class="app"><?php yan_menu($k, 'parsel-ciz'); ?>
 <div class="main"><?php ust_bar($k, 'Yeni Tarla Ekle'); ?>
 <div class="body"><div class="row" style="grid-template-columns:1.9fr 1fr;align-items:stretch">

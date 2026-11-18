@@ -6,7 +6,7 @@ require_once __DIR__ . '/yerlesim.php';
 $k = rol_gerekli('Çiftçi');
 $parsel = parsel_sec($k);
 ?>
-<!doctype html><html lang="tr"><head><meta charset="utf-8"><title>Akıllı Tarım prototip W6</title><link rel="stylesheet" href="../prototip/assets/stil.css"></head><body class=""><div class="app"><?php yan_menu($k, 'ekim', $parsel); ?>
+<!doctype html><html lang="tr"><head><meta charset="utf-8"><title>Akıllı Tarım prototip W6</title><link rel="stylesheet" href="../prototip/assets/stil.css"><link rel="stylesheet" href="tam-ekran.css"></head><body class=""><div class="app"><?php yan_menu($k, 'ekim', $parsel); ?>
 <div class="main"><?php ust_bar($k, $parsel['ad'] . ': Ekim ve Hasat'); ?>
 <div class="body"><?php parsel_harita($parsel); ?><div class="row" style="grid-template-columns:1fr 1.25fr">
 <div class="card"><h2>Ekim kaydı</h2><div class="f"><div class="g2"><div ><label>Ürün</label><div class="in">Buğday ▾</div></div><div ><label>Sezon</label><div class="in">2026</div></div></div><div class="g2"><div ><label>Ekim tarihi</label><div class="in">28.10.2026</div></div><div ><label>Durum</label><div class="in">Ekildi ▾</div></div></div>

@@ -6,7 +6,7 @@ require_once __DIR__ . '/yerlesim.php';
 $k = rol_gerekli('Çiftçi');
 $parsel = parsel_sec($k);
 ?>
-<!doctype html><html lang="tr"><head><meta charset="utf-8"><title>Akıllı Tarım prototip W7</title><link rel="stylesheet" href="../prototip/assets/stil.css"></head><body class=""><div class="app"><?php yan_menu($k, 'maliyet', $parsel); ?>
+<!doctype html><html lang="tr"><head><meta charset="utf-8"><title>Akıllı Tarım prototip W7</title><link rel="stylesheet" href="../prototip/assets/stil.css"><link rel="stylesheet" href="tam-ekran.css"></head><body class=""><div class="app"><?php yan_menu($k, 'maliyet', $parsel); ?>
 <div class="main"><?php ust_bar($k, $parsel['ad'] . ': Maliyet ve Kâr'); ?>
 <div class="body"><?php parsel_harita($parsel); ?><div class="row" style="grid-template-columns:1fr 1.25fr">
 <div class="card"><h2>Gider kalemleri (TL/dönüm)</h2><div class="f"><div class="g2"><div><label>Tohum</label><div class="in">500</div></div><div><label>Gübre</label><div class="in">500</div></div><div><label>İlaç</label><div class="in">500</div></div><div><label>Sulama</label><div class="in">500</div></div><div><label>İşçilik</label><div class="in">500</div></div><div><label>Makine</label><div class="in">500</div></div></div><div>Toplam: <b>3.000,00 TL/dönüm</b></div><a class="btn" href="maliyet.php?id=<?= (int) $parsel['parsel_id'] ?>" style="text-align:center">Hesapla</a></div>

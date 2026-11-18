@@ -25,7 +25,7 @@ $kayit_hata = KAYIT_HATALARI[$_GET['kayit_hata'] ?? ''] ?? null;
 <head>
 <meta charset="utf-8">
 <title><?= h(UYGULAMA_ADI) ?> · Giriş</title>
-<link rel="stylesheet" href="../prototip/assets/stil.css">
+<link rel="stylesheet" href="../prototip/assets/stil.css"><link rel="stylesheet" href="tam-ekran.css">
 </head>
 <body>
 <div class="login">

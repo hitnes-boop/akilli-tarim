@@ -5,7 +5,7 @@ require_once __DIR__ . '/yerlesim.php';
 
 $k = rol_gerekli('Danışman');
 ?>
-<!doctype html><html lang="tr"><head><meta charset="utf-8"><title>Akıllı Tarım prototip W10</title><link rel="stylesheet" href="../prototip/assets/stil.css"></head><body class=""><div class="app"><?php yan_menu($k, 'danisman'); ?>
+<!doctype html><html lang="tr"><head><meta charset="utf-8"><title>Akıllı Tarım prototip W10</title><link rel="stylesheet" href="../prototip/assets/stil.css"><link rel="stylesheet" href="tam-ekran.css"></head><body class=""><div class="app"><?php yan_menu($k, 'danisman'); ?>
 <div class="main"><?php ust_bar($k, 'Danışman Paneli'); ?>
 <div class="body"><div class="row" style="grid-template-columns:.85fr 1.6fr">
 <div class="card"><h2>Bana paylaşılan</h2>

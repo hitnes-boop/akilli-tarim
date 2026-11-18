@@ -7,7 +7,7 @@ require_once __DIR__ . '/olcum.php';
 $k = rol_gerekli('Çiftçi');
 $parsel = parsel_sec($k);
 ?>
-<!doctype html><html lang="tr"><head><meta charset="utf-8"><title>Akıllı Tarım prototip W5</title><link rel="stylesheet" href="../prototip/assets/stil.css"></head><body class=""><div class="app"><?php yan_menu($k, 'detay-toprak', $parsel); ?>
+<!doctype html><html lang="tr"><head><meta charset="utf-8"><title>Akıllı Tarım prototip W5</title><link rel="stylesheet" href="../prototip/assets/stil.css"><link rel="stylesheet" href="tam-ekran.css"></head><body class=""><div class="app"><?php yan_menu($k, 'detay-toprak', $parsel); ?>
 <div class="main"><?php ust_bar($k, $parsel['ad'] . ': Toprak ve Öneri'); ?>
 <div class="body"><?php parsel_harita($parsel); ?><?php toprak_kartlari($parsel); ?>
 </div></div></div>

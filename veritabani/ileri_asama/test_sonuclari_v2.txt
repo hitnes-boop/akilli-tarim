@@ -1,0 +1,72 @@
+=== TABLO / OBJE SAYILARI ===
+tablo: 24
+görünüm: 3
+tetikleyici: 9
+indeks: 14
+foreign_key_check: []
+
+=== KURAL TESTLERİ (hepsi reddedilmeli) ===
+OK  reddedildi  | olmayan kullanıcıya parsel (FK) -> FOREIGN KEY constraint failed
+OK  reddedildi  | danışmana parsel eklemek (trigger) -> Parsel yalnızca Çiftçi rolündeki kullanıcıya eklenebilir
+OK  reddedildi  | çiftçiyle parsel paylaşmak (trigger) -> Parsel yalnızca Danışman rolündeki kullanıcıyla paylaşılabilir
+OK  reddedildi  | pH = 15 (CHECK) -> CHECK constraint failed: ph BETWEEN 0 AND 14
+OK  reddedildi  | aynı parsel+ürün+sezon (UNIQUE) -> UNIQUE constraint failed: EKIM.parsel_id, EKIM.urun_id, EKIM.sezon_yil
+OK  reddedildi  | negatif gider (CHECK) -> CHECK constraint failed: tutar >= 0
+OK  reddedildi  | aynı e-posta (UNIQUE) -> UNIQUE constraint failed: KULLANICI.email
+OK  reddedildi  | boş danışman notu (CHECK) -> CHECK constraint failed: length(trim(metin)) > 0
+OK  reddedildi  | NDVI > 1 (CHECK) -> CHECK constraint failed: ort_ndvi BETWEEN -1 AND 1
+OK  reddedildi  | kaynaksız ürün (NOT NULL) -> NOT NULL constraint failed: URUN.kaynak_id
+
+=== TETİKLEYİCİ SONUÇLARI ===
+Münavebe uyarısı (otomatik): [(1, 'Münavebe'), (3, 'Münavebe')]
+Hasat sonrası EKIM durumu: [(1, 'Hasat edildi'), (2, 'Hasat edildi')]
+Denetim günlüğü: [('EKIM', 'EKLE', 6), ('PARSEL', 'EKLE', 4)]
+
+=== R*TREE: Çumra çevresindeki (32.84–32.87 E, 37.56–37.59 N) parseller ===
+[('Dere kenarı',), ('Çumra senaryo parseli',)]
+
+=== GÖRÜNÜM v_parsel_ozet ===
+(1, 'Çumra senaryo parseli', 'Mehmet Usta', 'Konya', 'Çumra', 109.4, 6.4, 0.1852, 3)
+(2, 'Kuzey tarla', 'Mehmet Usta', 'Konya', 'Karatay', 120.0, 7.6, 0.19, 0)
+(3, 'Dere kenarı', 'Ali Çiftçi', 'Konya', 'Çumra', 80.5, 6.4, 0.24, 1)
+(4, 'Bağ yanı', 'Ali Çiftçi', 'Hatay', 'Antakya', 45.0, None, None, 0)
+
+=== GÖRÜNÜM v_ekim_kar ===
+(1, 'Çumra senaryo parseli', 'Arpa', 2025, 'Hasat edildi', 109.4, 246150.0, 298497.9, 52347.9, 386750.0, 140600.0)
+(2, 'Dere kenarı', 'Buğday', 2025, 'Hasat edildi', 80.5, 193200.0, 349329.75, 156129.75, 334960.0, 141760.0)
+(3, 'Çumra senaryo parseli', 'Buğday', 2026, 'Ekildi', 109.4, 328200.0, 474741.3, 146541.3, None, None)
+(4, 'Kuzey tarla', 'Ayçiçeği', 2026, 'Planlandı', 120.0, 312000.0, None, None, None, None)
+(5, 'Dere kenarı', 'Buğday', 2026, 'Ekildi', 80.5, 217350.0, 349329.75, 131979.75, None, None)
+(6, 'Bağ yanı', 'Arpa', 2026, 'Planlandı', 45.0, 0.0, None, None, None, None)
+
+=== SORGU PLANI (NDVI zaman serisi) ===
+SEARCH NDVI_OLCUM USING INDEX idx_ndvi_parsel_tarih (parsel_id=?)
+
+=== CASCADE TESTİ (geri alınır) ===
+PARSEL, EKIM, EKIM_GIDER, NDVI_OLCUM, FAALIYET, PAYLASIM, DANISMAN_NOTU  önce: [4, 6, 30, 6, 5, 2, 2]  sonra: [3, 4, 18, 2, 1, 1, 0]
+
+=== SATIR SAYILARI ===
+DANISMAN_NOTU    2
+EKIM             6
+EKIM_GIDER       30
+FAALIYET         5
+FAALIYET_TURU    5
+FIYAT            2
+HASAT            2
+HAVA_TAHMINI     7
+IL               2
+ILCE             3
+ISLEM_GUNLUGU    10
+KALEM            6
+KAYNAK           10
+KULLANICI        3
+NDVI_OLCUM       6
+PARSEL           4
+PARSEL_KONUM     4
+PAYLASIM         2
+ROL              2
+TOHUM_CESIDI     3
+TOPRAK_OLCUM     4
+URUN             3
+UYARI            4
+VERIM            20

@@ -1,0 +1,25 @@
+<!doctype html><html lang="tr"><head><meta charset="utf-8"><title>Akıllı Tarım prototip W1</title><link rel="stylesheet" href="assets/stil.css"></head><body class=""><div class="login"><div class="l"><div class="logo"><i></i>Akıllı Tarım</div><h1 style="margin-top:80px;font-size:26px">Toprağını tanı, ona göre ek.</h1>
+<p style="color:#D5E0D8;font-size:13px">Parselini çiz; uydu, hava ve toprak verisini kaynağıyla birlikte gör.</p>
+<ul class="soz"><li>Tarlanı haritada tutup sürükleyerek bul</li><li>Sentinel-2 uydu görüntüsüyle bitki örtüsünü gör</li><li>Her sayının kaynağını yanında oku</li></ul>
+<p class="sm" style="color:#8FA698;margin-top:50px">Veri kaynakları: TMO, TÜİK, FAO, Open-Meteo, Sentinel-2, SoilGrids</p></div>
+<div class="r"><div class="box card" style="padding:18px"><h2 style="font-size:19px;margin-bottom:10px">Giriş yap</h2>
+<form class="f" id="giris" novalidate>
+<div><label for="eposta">E-posta</label><input class="in" id="eposta" type="email" value="mehmet@ornek.com" autocomplete="username" style="width:100%"></div>
+<div><label for="parola">Parola</label><input class="in" id="parola" type="password" placeholder="Demo parola: 1234" autocomplete="current-password" style="width:100%"></div>
+<div class="sm" style="margin-top:2px">▸ Hesabın yok mu? <b style="color:var(--yesil)">Kayıt ol</b> (kayıtta rol seçilir)</div>
+<div><label>Rol (yalnızca kayıtta)</label><label class="chip" style="cursor:pointer"><input type="radio" name="rol" value="ciftci" checked> Çiftçi</label> <label class="chip" style="cursor:pointer;background:#fff;color:#55645B;border:1px solid #CFC7B1"><input type="radio" name="rol" value="danisman"> Danışman</label></div>
+<button class="btn" type="submit" style="text-align:center;padding:8px;cursor:pointer">Giriş yap</button>
+<div class="note e" id="hata" role="alert" hidden>E-posta veya parola hatalı. Tekrar deneyin.</div>
+</form>
+<script>
+document.getElementById('giris').addEventListener('submit',function(e){
+  e.preventDefault();
+  var m=document.getElementById('eposta').value.trim().toLowerCase(),
+      p=document.getElementById('parola').value,
+      h=document.getElementById('hata');
+  var hedef={'mehmet@ornek.com':'panel.html','danisman@ornek.com':'danisman.html'}[m];
+  if(hedef && p==='1234'){location.href=hedef}else{h.hidden=false}
+});
+</script>
+<div class="sm">Danışman olarak giriş için: <a href="danisman.html" style="color:var(--yesil);text-decoration:underline">Danışman paneli</a></div></div></div></div>
+<div class="wfnote"><b>W1 · Giriş / Kayıt</b> &nbsp;|&nbsp; <b>Amaç:</b> kimlik doğrulama ve kayıtta rol seçimi &nbsp;|&nbsp; <b>Açtığı sayfa:</b> Ana Sayfa (Çiftçi) veya Danışman Paneli</div></body></html>

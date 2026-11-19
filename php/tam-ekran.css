@@ -33,9 +33,29 @@ td { padding: 8px; }
 .login .r { align-items: center; padding: 32px 20px; }
 .login .box { width: min(420px, 100%); }
 
-@media (max-width: 800px) {
+/* Uzun metinler hücre dışına taşmasın, kesilmesin */
+td { overflow-wrap: break-word; }
+th { white-space: nowrap; }
+.card { min-width: 0; }
+
+/* Dar ekran (tablet / telefon): tek sütun, tablolar kartın içinde yatay kayar */
+@media (max-width: 900px) {
   .app { grid-template-columns: 1fr; }
-  .side { flex-direction: row; flex-wrap: wrap; gap: 4px; }
-  .login { grid-template-columns: 1fr; }
-  .login .l h1 { margin-top: 20px !important; font-size: 26px !important; }
+  .side { flex-direction: row; flex-wrap: wrap; align-items: center; gap: 4px; padding: 10px 12px; }
+  .side .logo { width: 100%; margin: 0 0 6px; }
+  .side .sec, .side .rol { display: none; }
+  .side a { padding: 6px 10px; }
+  .side a small { display: none; }
+  .side .alt { display: contents; }
+  .top { height: auto; min-height: 48px; padding: 8px 14px; flex-wrap: wrap; }
+  .top h1 { font-size: 17px; flex: 1 1 100%; }
+  .body { padding: 12px 12px 24px; }
+  .row, .g2, .g3 { grid-template-columns: minmax(0, 1fr) !important; }
+  .card { overflow-x: auto; }
+  table { min-width: 560px; }
+  #harita, .leaflet-container { max-width: 100%; }
+  .login { grid-template-columns: 1fr; min-height: 0; }
+  .login .l { padding: 28px 20px; }
+  .login .l h1 { margin-top: 18px !important; font-size: 26px !important; }
+  .login .r { padding: 20px 12px 32px; }
 }
